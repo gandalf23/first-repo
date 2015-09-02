@@ -1,0 +1,48 @@
+<h1>Welcome to TravelCo's Website</h1>
+<p>For all your travel related needs</p>
+<p>Our homeland is:  <%=@homeland %></p>
+<ul>
+<% @countries.each do |name| %>
+    <li><%= name %></li>
+    
+<% end %>
+</ul>
+    
+<%= image_tag "ptwampa.jpg",class: "img-responsive" ,alt: "Preston & Tristan on the Wampa rug", id: "starwars", width: @width, height: @height %>
+
+
+<%= image_tag "123.jpg" , class: "img-responsive", width: @width, height: @height %>
+
+
+<%= image_tag "456.jpg",class: "img-responsive", width: @width, height: @height %>
+
+
+<%= image_tag "taiwan6.jpg", class: "img-responsive", width: @width, height: @height %>
+
+
+
+<table class="table table-hover">
+  <tr>
+    <% @united_states.each do |key,value| %>
+	  <th><%= key.titleize %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @united_states.each do |key,value| %>      
+      <% if value.kind_of?(Array) %>
+          <td><%= value.join(", ") %></td>
+      <% else %>
+         <td><%= value %></td>
+      <% end %> 
+    <% end %>
+  </tr>
+</table>
+    
+
+<!--<p><a href="https://travel2-gandalf23.c9.io/about">About Us</a></p>-->
+
+<p><%= link_to "About", about_path %></p>
+
+<p><%= link_to "Contact Us", contact_path %></p>
+
+<p><%= link_to "Home", index_path %></p>

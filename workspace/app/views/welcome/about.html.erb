@@ -1,0 +1,27 @@
+<body bgcolor=<%=@color %>>
+<h1>About TravelCo</h1>
+<p>TravelCo was created at 9:37 am central time on August 25th, 2015, and since that time has become a leader in the travel industry.  We pride outselves on being the best site to go to for all your travel and travel related needs. </p>
+<p>Our favorite color is: <%= @color %></p>
+<p>Our average shoe size is: <%= @size %></p>
+<% if @size.to_i > 12 %>
+    <p>"We have HUGE feets!!</p>
+<% elsif @size.to_i <6 %>
+    <p>"We have teeny tiny feets!"</p>
+<% end %>
+
+<%= link_to "Blue", about_path(color: "blue"), class: "btn btn-primary" %>
+<p></p>
+
+<% @imagesarray.each do |filename| %>
+    <%= image_tag filename ,class: "img-responsive",  width: @width, height: @height%>
+<% end %>
+
+
+
+
+<!--<p><a href="https://travel2-gandalf23.c9.io/">Home</a></p>-->
+
+<p><%= link_to "Contact Us", contact_path %></p>
+
+<p><%= link_to "Home", index_path %></p>
+</body>
